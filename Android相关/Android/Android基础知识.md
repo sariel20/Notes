@@ -79,7 +79,7 @@ __总而言之，onSaveInstanceState调用遵循一个原则，即当系统未�
 - 由于默认的onSaveInstanceState方法的实现帮助UI存储状态，所以如果你需要覆盖这个方法去存储额外状态信息，你应该在执行任何代码之前都调用父类的onSaveInstanceState方法，
 - 由于onSaveInstanceState方法调用的不确定性，你应该只使用这个方法去记录activity的瞬间状态（UI状态）,不应该用这个方法去存储持久化数据。如果需要存储持久化数据应该在onPause中。
 
-###### onRestoreInstanceState(Bundle outState)
+##### onRestoreInstanceState(Bundle outState)
 此方法调用的前提是，activity确实被系统销毁了，而不是仅仅停留在有这种可能性的情况下。
 
 ### Fragment
@@ -145,7 +145,7 @@ __getApplication用来获取Application的实例，但是这个方法只能在Ac
 __创建对话框传入application的Context是不可以的__
 
 ##### IntentService的使用场景和特点
-IntentService是Service的子类，是一个异步的，会自动停止的服务，很好的解决了传统的service中处理完耗时操作忘记停止并销毁的问题
+IntentService是Service的子类，是一个异步的，会自动停止的服务，很好的解决了传统的service中处理完耗时操作忘记停止并销毁的问题  
 __优点__
 - 一方面不需要自己去new Thread
 - 另一方面不需要考虑在什么时候关闭该service
