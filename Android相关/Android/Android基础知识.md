@@ -144,7 +144,7 @@ __冷启动指在启动应用前，系统中没有该应用的任何进程信息
 __getApplication用来获取Application的实例，但是这个方法只能在Activity和Service中调用，如果想在BroadcastReceiver中也想获的Application的实例，可以借助getApplicationContext()方法,后者比前者作用于更广。__
 __创建对话框传入application的Context是不可以的__
 
-#####IntentService的使用场景和特点
+##### IntentService的使用场景和特点
 IntentService是Service的子类，是一个异步的，会自动停止的服务，很好的解决了传统的service中处理完耗时操作忘记停止并销毁的问题
 __优点__
 - 一方面不需要自己去new Thread
