@@ -1,24 +1,25 @@
-###五种布局：
-####FrameLayout,LinearLatyou,AbsoluteLayout,RelativeLayout,TableLayout全部继承ViewGroup
-####各自特点：
-####FrameLayout 框架布局
-最简单，所有控件会默认出现在视图左上角，使用_layout_margin，layout_gravity_等属性控制子控件相对位置
-####LinearLayout 线性布局
-一行或一列只控制一个控件的线性布局，当有很多控件需要在一个界面上列出时，可使用LinearLayout布局，使用_orientation=horizontal 横向排列|vertical 竖向排列_
-####AbsoluteLayout 绝对布局
-可以放置多个控件，并且可以自定义控件的xy位置
-####RelativeLayout 相对布局
-相对自由的布局，可对布局中的views进行任意控制
-####TableLayout 表格布局
-将子元素的位置分配到行或列中，一个TableLayout由许多_TableRow_组成
-###Activity生命周期
-![enter image description here](https://camo.githubusercontent.com/1523c46db6fb3e46f13db6effb0b27e972dd85d8/687474703a2f2f696d672e626c6f672e6373646e2e6e65742f3230313330383238313431393032383132)
-######生命周期分析
+### 五种布局：  
+#### FrameLayout,LinearLatyou,AbsoluteLayout,RelativeLayout,TableLayout全部继承ViewGroup  
+#### 各自特点：  
+#### FrameLayout 框架布局  
+最简单，所有控件会默认出现在视图左上角，使用_layout_margin，layout_gravity_等属性控制子控件相对位置  
+#### LinearLayout 线性布局  
+一行或一列只控制一个控件的线性布局，当有很多控件需要在一个界面上列出时，可使用LinearLayout布局，使用_orientation=horizontal 横向排列|vertical 竖向排列_  
+#### AbsoluteLayout 绝对布局  
+可以放置多个控件，并且可以自定义控件的xy位置  
+#### RelativeLayout 相对布局  
+相对自由的布局，可对布局中的views进行任意控制  
+#### TableLayout 表格布局  
+将子元素的位置分配到行或列中，一个TableLayout由许多 _TableRow_ 组成  
+#### Activity生命周期  
+![enter image description here](https://camo.githubusercontent.com/1523c46db6fb3e46f13db6effb0b27e972dd85d8/687474703a2f2f696d672e626c6f672e6373646e2e6e65742f3230313330383238313431393032383132)  
+
+###### 生命周期分析
 - onCreate() 初始化，比如setContentView创建布局
 - onStart() 正在被启动，即将开始，处于后台可见状态
 - onResume() 前台可见状态，可交互
-- onPause() 正在停止，该现象属于极端情况，用户很难重现这一操作
- __如果新activity使用透明主题，那么当前activity就会回调onPause()不会继续调用onStop()__
+- onPause() 正在停止，该现象属于极端情况，用户很难重现这一操作  
+ __如果新activity使用透明主题，那么当前activity就会回调onPause()不会继续调用onStop()__ 
 - onStop即将停止，可做重量级回收工作，不能太耗时
 - onDestory()即将销毁，可做最终的资源释放等工作
 - onRestart() 重新启动，由不可见变为可见时调用
@@ -28,27 +29,27 @@
 - 锁屏  onPause() -> onStop()
 - 解锁  onStart() -> onResume()
 
-__android进程优先级__
-__前台>可见>后台>服务>空__
+ __android进程优先级__ 
+__前台>可见>后台>服务>空__  
 __系统内存不足时根据优先级回收__
 
-###Activity启动模式
-__通过xml标签改变启动模式__
-android:launchMode="standard|singleInstance|singleTask|singleTop"来控制Acivity任务栈
+### Activity启动模式  
+__通过xml标签改变启动模式__  
+`android:launchMode="standard|singleInstance|singleTask|singleTop"`来控制Acivity任务栈
 
-__任务栈__是一种后进先出的结构。位于栈顶的activity处于焦点状态，按下back时，栈内的activity会一个一个的出栈。如果栈内没有activity，那么系统会回收这个栈，每个app默认只有一个栈，app包名命名。
+任务栈是一种后进先出的结构。位于栈顶的activity处于焦点状态，按下back时，栈内的activity会一个一个的出栈。如果栈内没有activity，那么系统会回收这个栈，每个app默认只有一个栈，app包名命名。
 
 - standard：标准模式，每次启动activity都会创建新的实例，并将其压入栈顶，不管activity是否已存在。
 - singleTop：栈顶复用模式，如果新的activity位于栈顶，那么不会重新创建。
-- singleTask：栈内复用模式，如果新的activity处在栈内，那么这个activity就会被调到栈顶，__并且singleTask会清理在当前activity上面的所有activity。__
+- singleTask：栈内复用模式，如果新的activity处在栈内，那么这个activity就会被调到栈顶，__并且singleTask会清理在当前activity上面的所有activity。
 - singleInstance：加强版的singleTask模式，这种模式的activity只能单独位于一个任务栈内，由于栈内复用的特性，后续请求均不会创建新的activity，除非这个独特的任务栈被销毁。
 
-_Activity启动过程_
-_启动请求会由__instrumentation__处理，然后通过__binder__向__AMS__发送请求，__AMS__内部维护一个__ActivityStack__并负责栈内的Activity状态同步，__AMS__通过__ActivityThread__同步activity的状态，并完成生命周期方法的调用_
+Activity启动过程
+启动请求会由instrumentation处理，然后通过binder向AMS发送请求，AMS内部维护一个ActivityStack并负责栈内的Activity状态同步，AMS通过ActivityThread同步activity的状态，并完成生命周期方法的调用
 
-####Activity缓存方法
+#### Activity缓存方法
 如果系统内存不足，可能会把前一个activity回收，导致前一个activity中的临时数据丢失
-使用__onSaveInstanceState()__回调方法保存临时数据和状态，这个方法一定会在活动被回收前调用，方法中有一个Bundle参数，putString()、putInt()等方法需要传入键值对，数据保存后会在onCreate()中恢复
+使用 __onSaveInstanceState()__ 回调方法保存临时数据和状态，这个方法一定会在活动被回收前调用，方法中有一个Bundle参数，putString()、putInt()等方法需要传入键值对，数据保存后会在onCreate()中恢复
 示例：
 		
 	@Override
@@ -78,13 +79,13 @@ __总而言之，onSaveInstanceState调用遵循一个原则，即当系统未�
 - 由于默认的onSaveInstanceState方法的实现帮助UI存储状态，所以如果你需要覆盖这个方法去存储额外状态信息，你应该在执行任何代码之前都调用父类的onSaveInstanceState方法，
 - 由于onSaveInstanceState方法调用的不确定性，你应该只使用这个方法去记录activity的瞬间状态（UI状态）,不应该用这个方法去存储持久化数据。如果需要存储持久化数据应该在onPause中。
 
-######onRestoreInstanceState(Bundle outState)
+###### onRestoreInstanceState(Bundle outState)
 此方法调用的前提是，activity确实被系统销毁了，而不是仅仅停留在有这种可能性的情况下。
 
-###Fragment
+### Fragment
 Fragment生命周期与activity的关系
 
-![Alt text](./Fragment.png)
+![enter image description here](https://github.com/sariel20/StudyNotes/blob/master/Android%E7%9B%B8%E5%85%B3/img/Fragment.png)  
 
 activity加载fragment的方式
 1.静态加载，在布局文件中加入<fragment标签
@@ -94,46 +95,46 @@ Fragment通信
 - getActivity() 调用Activity中的方法
 - Activity中使用接口调用Fragment中的方法
 - findFragmentById Fragment之间相互调用
-
-#####为什么在Service中创建子线程而不是Activity中
+ 
+##### 为什么在Service中创建子线程而不是Activity中
 因为activity很难对Thread进行控制，当activity被销毁后就没有任何其他办法可以再重新获取到之前创建的子线程的实例。而且在一个activity中创建子线程，另一个activity无法对其进行操作。但service不同，所有的activity都可以与service进行关联，可以很方便的操作其中的方法。
 
-#####Service两种启动方法有什么区别？
+##### Service两种启动方法有什么区别？
 1.在Context中通过bindService方法来进行service与context的关联并启动，并且service的生命周期依附于context
 2.通过startService方法启动一个service，此时service的声明周期与启动它的context无关
 3.需要在xml里注册service
 	
 	<service android:name=".packnameName.youServiceName"
 	        android:enabled="true" />
-
-#####广播 Broadcast Receiver的两种注册的区别
+ 
+##### 广播 Broadcast Receiver的两种注册的区别
 - 静态注册：在Manifest.xml中注册，当app退出后，receiver仍然可以接收到广播并进行相应的处理
 - 动态注册：在代码中注册，当app退出后，广播被销毁
 
-#####目前能否保证service不被杀死
-######Service设置成START_STICKY
+##### 目前能否保证service不被杀死
+###### Service设置成START_STICKY
 kill后会被重启，等待五秒，重新传intent，保持与重启前一样
-######提升service优先级
+###### 提升service优先级
 - 在manifast.xml文件中对于intent-filter可以通过`android:priority="1000"`这个属性设置最高优先级
 - 目前来看，priority这个属性貌似只适用于broadcast，对service可能无效
-######提升service进程优先级
+###### 提升service进程优先级
 - android中的进程是托管的，当系统进程空间紧张的时候，会依照优先级自动进行进程回收
 - 当service运行在低内存的环境时，将会kill掉一些存在的进程，因此进程的优先级将会很重要，可以在startForeground()使用startForeground()将service放到前台状态，这样被kill的几率会低一些。
 - 如果极度低内存的压力下，该service还是会被杀死
-######onDestroy中重启service
+###### onDestroy中重启service
 - service+broadcast方式，当service回调onDestroy的时候，发送一条广播，在接受广播中重启service
 - 在onDestroy里startService
 
-######据说手机qq放一个像素的透明悬浮在前台，保证不被杀死
+###### 据说手机qq放一个像素的透明悬浮在前台，保证不被杀死
 
-####Android数据存储形式
+#### Android数据存储形式
 - Sqlite，轻量级数据库，支持基本sql语法，android为此数据库提供SqlteDatabase的类，封装操作数据库的api
 - SharedPreference，xml文件存储方式
 - File，文件I/O存储方法，不推荐，更新数据较为困难
 - ContentProvider，android中能实现所有应用程序共享的一种存储方式，由于数据通常在各应用间互相私密，所以此方式较少使用。音频，视频，图片和通讯录一般采用此方式存储。
-#####如何判断应用被强杀
+##### 如何判断应用被强杀
 在application中定义一个static常量，赋值-1，在欢迎界面改为0,如果被强杀application重新初始化，在父类判断该常量的值。
-#####Android启动速度优化
+##### Android启动速度优化
 - Application的构造方法和onCreate方法中不要进行耗时操作，数据预读取放在异步中操作
 - 启动新的activity不要在旧的activity的onPause中执行耗时操作，因为新的activity onResume方法必须等待旧的onPause执行完成后运行
 - 减少布局复杂性
