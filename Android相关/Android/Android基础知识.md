@@ -1,0 +1,7 @@
+五种布局：FrameLayout,LinearLatyou,AbsoluteLayout,RelativeLayout,TableLayout全部继承ViewGroup
+各自特点：
+FrameLayout 框架布局
+最简单，所有控件会默认出现在视图左上角，使用layout_margin，layout_gravity等属性控制子控件相对位置
+LinearLayout 线性布局
+一行或一列只控制一个控件的线性布局，当有很多控件需要在一个界面上列出时，可使用LinearLayout布局，使用orientation=horizontal 横向排列   |  vertical 竖向排列
+AbsoluteLayout 绝对布局
