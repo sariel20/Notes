@@ -1,4 +1,4 @@
-### 五种布局：  
+### 六种布局：  
 #### FrameLayout,LinearLatyou,AbsoluteLayout,RelativeLayout,TableLayout全部继承ViewGroup  
 #### 各自特点：  
 #### FrameLayout 框架布局  
@@ -11,6 +11,11 @@
 相对自由的布局，可对布局中的views进行任意控制  
 #### TableLayout 表格布局  
 将子元素的位置分配到行或列中，一个TableLayout由许多 _TableRow_ 组成  
+#### ConstraintLayou
+__AndroidStudio2.2新增功能，适合可视化方式编写界面，有效解决布局嵌套过多的问题。__
+拖动控件后需用鼠标给控件添加约束，否则运行后位置在左上角，并不是蓝图显示的控件位置。
+[ConstraintLayout完全解析](http://blog.csdn.net/guolin_blog/article/details/53122387)
+
 #### Activity生命周期  
 ![enter image description here](https://camo.githubusercontent.com/1523c46db6fb3e46f13db6effb0b27e972dd85d8/687474703a2f2f696d672e626c6f672e6373646e2e6e65742f3230313330383238313431393032383132)  
 
