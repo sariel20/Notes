@@ -35,7 +35,7 @@
   - [第一章](https://github.com/sariel20/StudyNotes/blob/master/Android%E7%9B%B8%E5%85%B3/%E5%BC%80%E5%8F%91%E8%89%BA%E6%9C%AF%E6%8E%A2%E7%B4%A2%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Chapter1.md)
   - 第二章
   - [第三章](https://github.com/sariel20/StudyNotes/blob/master/Android%E7%9B%B8%E5%85%B3/%E5%BC%80%E5%8F%91%E8%89%BA%E6%9C%AF%E6%8E%A2%E7%B4%A2%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Chapter3.md)
-  - 第四章
+  - [第四章](https://github.com/sariel20/StudyNotes/blob/master/Android%E7%9B%B8%E5%85%B3/%E5%BC%80%E5%8F%91%E8%89%BA%E6%9C%AF%E6%8E%A2%E7%B4%A2%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Chapter4.md)
   - 第五章
   - 第六章
   - 第七章
