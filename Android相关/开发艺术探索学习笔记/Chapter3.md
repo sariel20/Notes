@@ -56,16 +56,16 @@ startX，startY表示滑动起点；dx,dy表示滑动距离；duration表示滑�
 
 ----
 #### 事件分发机制
-#####点击事件的传递规则
+##### 点击事件的传递规则
 所谓点击事件的事件分发，其实就是对MotionEvent事件的分发过程，即当一个MotionEvent产生以后，系统需要把这个事件传递给一个具体的View，而这个传递过程就是分发过程。 
 
 三个重要方法 
-`boolean dispatchTouchEvent(MotionEvent ev)`
-用来进行事件分发，返回结果受当前View的`onTouchEvent`和下级View的`dispatchTouchEvent`方法的影响，表示是否消耗当前事件
-`boolean onInterceptTouchEvent(MotionEvent ev)`
-在上述方法内部调用，判断是否拦截某个事件
-`boolean onTouchEvent(MotionEvent ev)`
-在第一个方法中调用，处理点击事件
+`boolean dispatchTouchEvent(MotionEvent ev)` 
+用来进行事件分发，返回结果受当前View的`onTouchEvent`和下级View的`dispatchTouchEvent`方法的影响，表示是否消耗当前事件 
+`boolean onInterceptTouchEvent(MotionEvent ev)` 
+在上述方法内部调用，判断是否拦截某个事件 
+`boolean onTouchEvent(MotionEvent ev)` 
+在第一个方法中调用，处理点击事件 
 
 事件传递结论
 1. 同一个事件序列是指从手指接触屏幕那一刻起，到手指离开屏幕那一刻结束，在这个过程产生得一系列事件，这个事件序列以down事件开始，中间含有数量不定得move事件，最终up结束
