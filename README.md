@@ -19,7 +19,9 @@
   - glide框架
   - 热更新
   - 进程保活
-  - Kotlin
+
+------
+- [kotlin](https://github.com/sariel20/KotlinSample)
 
 ------
 - Java
