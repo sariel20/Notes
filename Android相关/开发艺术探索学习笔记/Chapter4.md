@@ -14,7 +14,7 @@ View层得事件都先经过DecorView，然后才传递给我们得View
 在测量过程中，系统会将View的LayoutParams根据父容器所施加得规则转换成对应的MeasureSpec，然后根据这个measureSpec来测量出View得宽高
 
 ##### View工作流程
-View的 _measure_ 过程
+View的 _measure_ 过程  
 measure方法中会调用View的`onMeasure`方法
 
  	 void onMeasure(int widthMeasureSpec,int heightMeasureSpec){
