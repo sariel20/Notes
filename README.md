@@ -1,6 +1,6 @@
 - [Android](https://github.com/sariel20/StudyNotes/tree/master/Android%E7%9B%B8%E5%85%B3/Android)
-  - [基础知识](https://github.com/sariel20/StudyNotes/blob/master/Android%E7%9B%B8%E5%85%B3/Android/Android%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86.md)
-  - [线程通信相关](https://github.com/sariel20/StudyNotes/blob/master/Android%E7%9B%B8%E5%85%B3/Android/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%9B%B8%E5%85%B3.md)
+  - [基础知识](https://github.com/sariel20/StudyNotes/blob/master/Android%E7%9B%B8%E5%85%B3/Android/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86.md)
+  - [线程通信相关](https://github.com/sariel20/StudyNotes/blob/master/Android%E7%9B%B8%E5%85%B3/Android/%E7%BA%BF%E7%A8%8B%E9%80%9A%E4%BF%A1%E7%9B%B8%E5%85%B3.md)
   - [内存泄露](https://github.com/sariel20/StudyNotes/blob/master/Android%E7%9B%B8%E5%85%B3/Android/%E5%86%85%E5%AD%98%E6%B3%84%E9%9C%B2.md)
   - [Android构建流程](https://github.com/sariel20/StudyNotes/blob/master/Android%E7%9B%B8%E5%85%B3/Android/Android%E6%9E%84%E5%BB%BA%E6%B5%81%E7%A8%8B.md)
   - [UI卡顿分析](https://github.com/sariel20/StudyNotes/blob/master/Android%E7%9B%B8%E5%85%B3/Android/UI%E5%8D%A1%E9%A1%BF%E5%88%86%E6%9E%90.md)
