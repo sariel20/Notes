@@ -13,7 +13,7 @@
   - git操作
   - Proguard代码混淆
   - retrofit
-  - okHttp
+  - [okHttp](https://github.com/sariel20/StudyNotes/blob/master/Android%E7%9B%B8%E5%85%B3/Android/okHttp.md)
   - volley
   - butterknife注解
   - glide框架
