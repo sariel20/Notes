@@ -1,0 +1,79 @@
+1. GsonFormat
+快速将json字符串转换成一个Java Bean，免去我们根据json字符串手写对应Java Bean的过程.
+使用方法：快捷键Alt+S也可以使用Alt+Insert选择GsonFormat
+
+2. Android ButterKnife Zelezny
+配合ButterKnife实现注解，从此不用写findViewById，想着就爽啊。在Activity，Fragment，Adapter中选中布局xml的资源id自动生成butterknife注解。
+使用方法：Ctrl+Shift+B选择图上所示选项
+
+3. Android Code Generator
+根据布局文件快速生成对应的Activity，Fragment，Adapter，Menu。
+
+4. Android Parcelable code generator
+JavaBean序列化，快速实现Parcelable接口。
+
+5. Android Methods Count
+显示依赖库中得方法数
+
+6. Lifecycle Sorter
+可以根据Activity或者fragment的生命周期对其生命周期方法位置进行先后排序，快捷键Ctrl + alt + K
+
+7. CodeGlance
+在右边可以预览代码，实现快速定位
+
+8. findBugs-IDEA
+查找bug的插件，Android Studio也提供了代码审查的功能（Analyze-Inspect Code...）
+
+9. ADB WIFI
+使用wifi无线调试你的app，无需root权限
+
+10. AndroidPixelDimenGenerator
+Android Studio自动生成dimen.xml文件插件
+
+11. genymotion
+速度较快的android模拟器
+
+12. SQLScout
+在 Android Studio 上调试数据库 ( SQLite )
+
+13. Android Postfix Completion
+可根据后缀快速完成代码，这个属于拓展吧
+
+14. GradleDependenciesHelperPlugin
+maven gradle 依赖支持自动补全
+
+15. AndroidProguardPlugin
+一键生成项目混淆代码插件，值得你安装~(不过目前可能有些第三方项目的混淆还未添加完全)
+
+16. eventbus-intellij-plugin
+eventbus导航插件(对于最新版的 EventBus 3.0.0 好像无效,请替换为eventbus3-intellij-plugin此插件地址在本文第51个)
+
+17. folding-plugin
+布局文件分组的插件
+
+18. Android Studio Prettify
+可以将代码中的字符串写在string.xml文件中
+选中字符串鼠标右键选择图中所示
+
+19. CheckStyle-IDEA
+CheckStyle-IDEA 是一个检查代码风格的插件，比如像命名约定，Javadoc，类设计等方面进行代码规范和风格的检查，你们可以遵从像Google Oracle 的Java 代码指南 ，当然也可以按照自己的规则来设置配置文件，从而有效约束你自己更好地遵循代码编写规范。
+
+20. ECTranslation
+Android Studio Plugin,Translate English to Chinese. Android Studio 翻译插件,可以将英文翻译为中文。
+
+21. PermissionsDispatcher plugin
+github:PermissionsDispatcher plugin
+自动生成6.0权限的代码
+
+22. WakaTime
+github:WakaTime
+记录你在IDE上的工作时间
+
+23. AndroidWiFiADB
+无线调试应用
+
+24. Codota
+搜索最好的Android代码。(Studio里面直接可以搜到此插件)
+
+25. LayoutFormatter
+drakeet 开发一个一键格式化你的 XML 文件的 Android Studio 插件
