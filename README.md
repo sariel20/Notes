@@ -51,14 +51,14 @@
   - 第十五章
 
 -----
-- 设计模式
+- [设计模式](https://github.com/sariel20/StudyNotes/tree/master/DesignPatterns)
   - 单例模式
   - Build建造者模式
   - 适配器模式
   - 装饰模式
   - 外观模式
   - 组合模式
-  - 观察者模式
+  - [观察者模式](https://github.com/sariel20/StudyNotes/blob/master/DesignPatterns/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F.md)
   - 策略模式
   - 模版方法模式
   - 责任链模式
