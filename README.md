@@ -12,11 +12,11 @@
   - ANR&OOM
   - git操作
   - Proguard代码混淆
-  - retrofit
+  - [retrofit](https://github.com/sariel20/StudyNotes/blob/master/Android%E7%9B%B8%E5%85%B3/Android/retrofit.md)
   - [okHttp](https://github.com/sariel20/StudyNotes/blob/master/Android%E7%9B%B8%E5%85%B3/Android/okHttp.md)
-  - volley
-  - butterknife注解
-  - glide框架
+  - [volley](https://github.com/sariel20/StudyNotes/blob/master/Android%E7%9B%B8%E5%85%B3/Android/volley.md)
+  - [butterknife](https://github.com/sariel20/StudyNotes/blob/master/Android%E7%9B%B8%E5%85%B3/Android/Butterknife.md)
+  - [glide框架](https://github.com/sariel20/StudyNotes/blob/master/Android%E7%9B%B8%E5%85%B3/Android/glide图片框架.md)
   - 热更新
   - 进程保活
 
@@ -70,7 +70,7 @@
   - Socket
   - [TCP与IP](https://github.com/sariel20/StudyNotes/blob/master/%E7%BD%91%E7%BB%9C%E5%8F%8A%E5%8D%8F%E8%AE%AE%E7%9B%B8%E5%85%B3/TCP%E4%B8%8EIP.md)
   - [DNS](https://github.com/sariel20/StudyNotes/blob/master/%E7%BD%91%E7%BB%9C%E5%8F%8A%E5%8D%8F%E8%AE%AE%E7%9B%B8%E5%85%B3/DNS.md)
-  - https加密算法
+  - [https加密算法](https://github.com/sariel20/StudyNotes/blob/master/%E7%BD%91%E7%BB%9C%E5%8F%8A%E5%8D%8F%E8%AE%AE%E7%9B%B8%E5%85%B3/HTTPS加密.md)
 
 ----
 - 算法
