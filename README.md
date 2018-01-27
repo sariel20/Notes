@@ -5,10 +5,10 @@
   - [Android构建流程](https://github.com/sariel20/StudyNotes/blob/master/Android%E7%9B%B8%E5%85%B3/Android/Android%E6%9E%84%E5%BB%BA%E6%B5%81%E7%A8%8B.md)
   - [UI卡顿分析](https://github.com/sariel20/StudyNotes/blob/master/Android%E7%9B%B8%E5%85%B3/Android/UI%E5%8D%A1%E9%A1%BF%E5%88%86%E6%9E%90.md)
   - [事件分发机制](https://github.com/sariel20/StudyNotes/blob/master/Android%E7%9B%B8%E5%85%B3/Android/%E4%BA%8B%E4%BB%B6%E5%88%86%E5%8F%91%E6%9C%BA%E5%88%B6.md)
-  - AsyncTask
+  - [AsyncTask](https://github.com/sariel20/StudyNotes/blob/master/Android%E7%9B%B8%E5%85%B3/Android/AsyncTask.md)
   - 冷启动及优化
   - 内存管理
-  - Bitmap
+  - [Bitmap](https://github.com/sariel20/StudyNotes/blob/master/Android%E7%9B%B8%E5%85%B3/Android/Bitmap.md)
   - ANR&OOM
   - git操作
   - Proguard代码混淆
@@ -45,7 +45,7 @@
   - 第九章
   - [第十章](https://github.com/sariel20/StudyNotes/blob/master/%E5%BC%80%E5%8F%91%E8%89%BA%E6%9C%AF%E6%8E%A2%E7%B4%A2%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Chapter10.md)
   - [第十一章](https://github.com/sariel20/StudyNotes/blob/master/%E5%BC%80%E5%8F%91%E8%89%BA%E6%9C%AF%E6%8E%A2%E7%B4%A2%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Chapter11.md)
-  - 第十二章
+  - [第十二章](https://github.com/sariel20/StudyNotes/blob/master/%E5%BC%80%E5%8F%91%E8%89%BA%E6%9C%AF%E6%8E%A2%E7%B4%A2%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Chapter12.md)
   - 第十三章
   - 第十四章
   - 第十五章
