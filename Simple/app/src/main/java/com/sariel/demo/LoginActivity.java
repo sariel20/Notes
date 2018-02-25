@@ -39,6 +39,7 @@ public class LoginActivity extends BaseActivity {
                 if ("admin".equals(etUserName.getText().toString()) && "123".equals(etPassword.getText().toString())) {
                     startActivity(new Intent(getApplicationContext(), MainActivity.class));
                     finish();
+
                 } else {
                     Toast.makeText(LoginActivity.this, "输入错误", Toast.LENGTH_SHORT).show();
                 }
