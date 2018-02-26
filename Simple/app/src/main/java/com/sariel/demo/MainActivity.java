@@ -1,7 +1,9 @@
 package com.sariel.demo;
 
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -25,6 +27,7 @@ import java.io.OutputStreamWriter;
  */
 
 public class MainActivity extends BaseActivity {
+
 
     EditText etData;
 
@@ -135,4 +138,6 @@ public class MainActivity extends BaseActivity {
         }
         return content.toString();
     }
+
+
 }
