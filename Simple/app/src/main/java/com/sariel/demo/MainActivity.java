@@ -7,6 +7,9 @@ import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Log;
+import android.view.MotionEvent;
+import android.view.VelocityTracker;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -73,6 +76,22 @@ public class MainActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(), ContactsListActivity.class));
+            }
+        });
+
+        findViewById(R.id.lin_main).setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                VelocityTracker velocityTracker = VelocityTracker.obtain();
+                velocityTracker.addMovement(event);
+
+                velocityTracker.computeCurrentVelocity(1000);
+                int x = (int) velocityTracker.getXVelocity();
+                int y = (int) velocityTracker.getYVelocity();
+
+                Log.e("VelocityTracker======>", x + "    " + y);
+
+                return true;
             }
         });
     }
