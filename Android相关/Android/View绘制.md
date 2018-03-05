@@ -1,3 +1,17 @@
+##### View基础知识
+_什么是View_
+所有控件得基类。View是一种界面层得控件的一种抽象。
+除了View还有ViewGroup，控件组，内部包含多个View，如LinearLayout
+_View位置参数，坐标系_
+View主要位置由四个顶点组成，分别对应View得四个属性：top,left,right,bottom
+其中top是左上角众坐标，left是左上角横坐标，right是右下角横坐标，bottom是右下角众坐标
+View宽高和坐标得关系：
+width = right - left
+height = bottom - top
+3.0开始，View增加了几个额外的参数：x,y,translationX,translationY
+xy是view得左上角坐标，而translationX和translationY是view左上角相对于父容器得偏移量
+
+
 ##### View树绘制流程
 1. onMeasure
 测量过程，测量视图大小，从顶层父View到子View地鬼调用measure方法
