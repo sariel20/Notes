@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.sariel.BaseActivity;
 import com.sariel.R;
+import com.sariel.demo.eventdispatch.EventDispatchActivity;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -90,6 +91,13 @@ public class MainActivity extends BaseActivity {
                 Log.e("VelocityTracker======>", x + "    " + y);
 
                 return true;
+            }
+        });
+
+        findViewById(R.id.eventDispatch).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, EventDispatchActivity.class));
             }
         });
     }

@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/lin_main"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
@@ -10,12 +9,12 @@
         android:id="@+id/btnSendBroadcast"
         android:layout_width="match_parent"
         android:layout_height="45dp"
-        android:text="Send force offline broadcast"/>
+        android:text="Send force offline broadcast" />
 
     <EditText
         android:id="@+id/etData"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -27,14 +26,14 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
-            android:text="Save File"/>
+            android:text="Save File" />
 
         <Button
             android:id="@+id/loadFile"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
-            android:text="Load File"/>
+            android:text="Load File" />
     </LinearLayout>
 
     <LinearLayout
@@ -47,20 +46,25 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
-            android:text="Set SP"/>
+            android:text="Set SP" />
 
         <Button
             android:id="@+id/loadSp"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
-            android:text="Load SP"/>
+            android:text="Load SP" />
     </LinearLayout>
 
     <Button
         android:id="@+id/contactsList"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Contacts List"/>
+        android:text="Contacts List" />
 
+    <Button
+        android:id="@+id/eventDispatch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Event Dispatch" />
 </LinearLayout>

@@ -55,3 +55,221 @@ xy是view得左上角坐标，而translationX和translationY是view左上角相�
 方向变化，尺寸变化就会调用这个方法
 
 
+#### [自定义View](https://www.jianshu.com/p/146e5cec4863)
+1. View的分类
+- 单一视图，即一个View，如TextView
+- 视图组，即多个View组成的ViewGroup,如LinearLayout
+2. View简介
+View是Android所有控件的基类
+View为表现在屏幕上的各种视图
+
+View的构造函数：
+
+	//如果View是在java代码里面new的，调用第一个构造函数
+	public CircelView(Context context) {
+        super(context);
+    }
+
+    //如果View是在.xml中声明的，则调用第二个构造函数
+    //自定义属性是从AttributeSet中获得的
+    public CircelView(Context context, @Nullable AttributeSet attrs) {
+        super(context, attrs);
+    }
+
+    //不会自动调用，一般是第二个构造函数里主动调用
+    //如View有style属性时
+    public CircelView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
+    }
+
+    //Api22之后才使用
+    //不会自动调用，一般是第二个构造函数里主动调用
+    //如view有style属性时
+    public CircelView(Context context, @Nullable AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+        super(context, attrs, defStyleAttr, defStyleRes);
+    }
+
+##### 无论是measure过程，layout过程，draw过程，永远都是从View树的根部节点开始测量或计算，即树顶端开始，一层一层一个分支一个分支的进行，即树形递归，最终计算整个View树中各个View，最终确定整个View树的相关属性
+
+3. 坐标系
+定义：
+屏幕左上角为坐标原点
+向右x轴增大方向
+向下y轴增大方向
+
+View位置由4个顶点决定
+##### View的位置相对于父控件而言
+Top，子View上边界到父View上边界的距离   view.getTop()
+Left,子View左边界到父VIew左边界得距离	  .getLeft()
+Bottom,子View下边距到父View上边界的距离	.getButtom()
+Right,子View右边界到父view左边界的距离		.getRight()
+
+MotionEvent中
+getX,getY表示触摸点相对于其所在组件坐标系的坐标
+getRawX,getRawY表示触摸点相对于屏幕默认坐标系的坐标
+
+4. 角度（angle）与弧度（radian）
+自定义view实际上是将一些简单的形状通过计算从而组合到一起形成得效果
+角度与弧度定义:
+两条从圆心向圆周射出的射线形成的夹角
+弧长/圆周长*360 = 角度
+弧长/半径r = 弧度
+相互转换： ang = 180/π * rad
+
+5. 颜色相关
+- 颜色模式
+ARGB8888 四通道高精度 32位
+ARGB4444 四通道低精度 16位
+RGB565 android屏幕默认模式 16位
+Alpha8 透明通道 8位
+字母表示通道类型
+数值表示该类型用多少位二进制描述
+
+##### measure过程
+- ViewGroup.LayoutParams
+布局参数类，指定视图view的高度height和宽度width等布局参数
+
+MeasureSpec 测量规格类，测量view大小的依据，可决定视图的大小
+测量规格MeasureSpec = 测量模式mode + 测量大小size
+其中测量模式有三种
+1. UNSPECIFIED 
+父视图不约束子视图View，一般自定义中用不到
+2. EXACTLY 
+父视图为子视图指定一个确切的尺寸，子视图大小必须在该指定尺寸内
+应用于match_parent(强制性使子视图大小扩展至与父视图大小相等)和具体数值
+3. AT_MOST
+父视图为子视图制定一个最大尺寸，子视图必须确保自身&所有子视图可适应在该尺寸内
+应用于wrap_content自适应大小
+该模式下父视图无法确定子视图尺寸，只能由子视图自身根据需求计算尺寸
+
+	// 1. 获取测量模式（Mode）
+    int specMode = MeasureSpec.getMode(measureSpec)
+
+    // 2. 获取测量大小（Size）
+    int specSize = MeasureSpec.getSize(measureSpec)
+
+    // 3. 通过Mode 和 Size 生成新的SpecMode
+    int measureSpec=MeasureSpec.makeMeasureSpec(size, mode)
+
+源码分析
+	
+	public static class MeasureSpec {
+	//进位大小= 2的30次方
+	//int的大小为32位，所以进位30位，使用31和32做标志位
+    private static final int MODE_SHIFT = 30;
+    private static final int MODE_MASK  = 0x3 << MODE_SHIFT;
+    public static final int UNSPECIFIED = 0 << MODE_SHIFT;
+    public static final int EXACTLY     = 1 << MODE_SHIFT;
+    public static final int AT_MOST     = 2 << MODE_SHIFT;
+    //根据提供的size和mode得到一个详细的测量结果，即measureSpec
+    public static int makeMeasureSpec(int size,int mode) {
+            return size + mode;
+    }
+    //获得测量模式
+    public static int getMode(int measureSpec) {
+        //noinspection ResourceType
+        return (measureSpec & MODE_MASK);
+    }
+    //获得测量大小
+    public static int getSize(int measureSpec) {
+        return (measureSpec & ~MODE_MASK);
+    }
+
+MeasureSpec计算
+子View的MeasureSpec根据子View的布局参数（LayoutParams)和父容器的MeasureSpec值计算得来，具体逻辑封装在getChildMeasureSpec
+View自身LayoutParams+父容器MeasureSpec = 子ViewMeasureSpec = 最终宽高
+	
+	//getChildMeasureSpec源码分析
+	//根据父视图MeasureSpec和布局参数LayoutParams计算单个子view的MeasureSpec
+	//参数说明：
+	//spec 父view的详细测量值
+	//padding view当前尺寸的内边距和外边距（padding，margin）
+	//childDimension 子视图的布局参数
+	public static int getChildMeasureSpec(int spec, int padding, int childDimension) {
+		//父view的测量模式
+        int specMode = MeasureSpec.getMode(spec);
+        //父view的大小
+        int specSize = MeasureSpec.getSize(spec);
+        //通过父view计算出子view = 父大小 - 边距
+        int size = Math.max(0, specSize - padding);
+        //子view想要的实际大小和模式
+        int resultSize = 0;
+        int resultMode = 0;
+        switch (specMode) {
+        	//父view强加给子view确切的值
+        	//一般父view设置为match_parent或者固定值
+            case MeasureSpec.EXACTLY:
+            	//当子view的layoutParams>0，即有确切的值
+                if (childDimension >= 0) {
+                	//子view大小为自身所赋的值
+                    resultSize = childDimension;
+                    resultMode = MeasureSpec.EXACTLY;
+                    //当子view的LayoutParams为match_parent时（-1）
+                } else if (childDimension == LayoutParams.MATCH_PARENT) {
+                	//子view大小为父view大小
+                    resultSize = size;
+                    resultMode = MeasureSpec.EXACTLY;
+                    //当view的layoutParams为wrap_content(-2)
+                } else if (childDimension == LayoutParams.WRAP_CONTENT) {
+                	//子view决定自己得大小，但最大不能超过父view
+                    resultSize = size;
+                    resultMode = MeasureSpec.AT_MOST;
+                }
+                break;
+            //当父view的模式为AT_MOST时。父view强加给子view一个最大的值
+            case MeasureSpec.AT_MOST:
+            //同上
+                if (childDimension >= 0) {
+                    resultSize = childDimension;
+                    resultMode = MeasureSpec.EXACTLY;
+                } else if (childDimension == LayoutParams.MATCH_PARENT) {
+                    resultSize = size;
+                    resultMode = MeasureSpec.AT_MOST;
+                } else if (childDimension == LayoutParams.WRAP_CONTENT) {
+                    resultSize = size;
+                    resultMode = MeasureSpec.AT_MOST;
+                }
+                break;
+            //父容器不对view有任何限制，要多大给多大
+            case MeasureSpec.UNSPECIFIED:
+                if (childDimension >= 0) {
+                	//子view大小为自身所赋的值
+                    resultSize = childDimension;
+                    resultMode = MeasureSpec.EXACTLY;
+                } else if (childDimension == LayoutParams.MATCH_PARENT) {
+                	//因为父view为UNSPECIFIED，所以match_parent的话子类大小为0
+                    resultSize = View.sUseZeroUnspecifiedMeasureSpec ? 0 : size;
+                    resultMode = MeasureSpec.UNSPECIFIED;
+                } else if (childDimension == LayoutParams.WRAP_CONTENT) {
+                	//同上
+                    resultSize = View.sUseZeroUnspecifiedMeasureSpec ? 0 : size;
+                    resultMode = MeasureSpec.UNSPECIFIED;
+                }
+                break;
+        }
+        return MeasureSpec.makeMeasureSpec(resultSize, resultMode);
+    }
+
+总结：  
+- EXACTLY  
+具体数值：EXACTLY + childSize  
+match_parent：EXACTLY + parentSize 父容器的剩余空间  
+wrap_content：AT_MOST + parentSize 大小不超过父容器的剩余空间  
+- AT_MOST  
+具体：EXACTLY + childSize  
+m:AT_MOST + parentSize 大小不超过父容器的剩余空间   
+w:AT_MOST + parentSize  
+- UNSPECIFIED  
+具体：EXACTLY + childSize  
+m: UNSPECIFIED + 0  
+w: UNSPECIFIED + 0  
+
+##### 单一view的measure过程
+具体流程：
+measure()->onMeasure()->setMeasureDimension()->getDefaultSize()
+
+
+##### ViewGroup的measure过程
+具体流程：
+measure()->onMeasure()->measureChildren()->measureChild()->
+getChildMeasureSpec()->遍历子view测量&合并->setMeasureDimension()
