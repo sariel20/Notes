@@ -7,24 +7,31 @@
   - [View绘制相关](https://github.com/sariel20/StudyNotes/blob/master/Android%E7%9B%B8%E5%85%B3/Android/View%E7%BB%98%E5%88%B6.md)
   - [事件分发机制](https://github.com/sariel20/StudyNotes/blob/master/Android%E7%9B%B8%E5%85%B3/Android/%E4%BA%8B%E4%BB%B6%E5%88%86%E5%8F%91%E6%9C%BA%E5%88%B6.md)
   - [AsyncTask](https://github.com/sariel20/StudyNotes/blob/master/Android%E7%9B%B8%E5%85%B3/Android/AsyncTask.md)
+  - [Fragment](https://github.com/sariel20/Notes/blob/master/Android%E7%9B%B8%E5%85%B3/Android/Fragment.md)
+  - [Bitmap](https://github.com/sariel20/StudyNotes/blob/master/Android%E7%9B%B8%E5%85%B3/Android/Bitmap.md)
+  - [Material Design](https://github.com/sariel20/StudyNotes/blob/master/Android%E7%9B%B8%E5%85%B3/Android/MaterialDesign.md)
+  - [ViewPage](https://github.com/sariel20/Notes/blob/master/Android%E7%9B%B8%E5%85%B3/Android/ViewPager.md)
   - 冷启动及优化
   - 内存管理
-  - [Bitmap](https://github.com/sariel20/StudyNotes/blob/master/Android%E7%9B%B8%E5%85%B3/Android/Bitmap.md)
   - ANR&OOM
   - git操作
   - Proguard代码混淆
-  - [retrofit](https://github.com/sariel20/StudyNotes/blob/master/Android%E7%9B%B8%E5%85%B3/Android/retrofit.md)
-  - [okHttp](https://github.com/sariel20/StudyNotes/blob/master/Android%E7%9B%B8%E5%85%B3/Android/okHttp.md)
-  - [volley](https://github.com/sariel20/StudyNotes/blob/master/Android%E7%9B%B8%E5%85%B3/Android/volley.md)
-  - [butterknife](https://github.com/sariel20/StudyNotes/blob/master/Android%E7%9B%B8%E5%85%B3/Android/Butterknife.md)
-  - [glide框架](https://github.com/sariel20/StudyNotes/blob/master/Android%E7%9B%B8%E5%85%B3/Android/glide图片框架.md)
   - 热更新
   - 进程保活
-  - [Material Design](https://github.com/sariel20/StudyNotes/blob/master/Android%E7%9B%B8%E5%85%B3/Android/MaterialDesign.md)
+
+-[开源库](https://github.com/sariel20/Notes/tree/master/Android%E7%9B%B8%E5%85%B3/Android/%E5%BC%80%E6%BA%90%E5%BA%93)
+  - [Retrofit](https://github.com/sariel20/Notes/blob/master/Android%E7%9B%B8%E5%85%B3/Android/%E5%BC%80%E6%BA%90%E5%BA%93/Retrofit.md)
+  - [Okhttp](https://github.com/sariel20/Notes/blob/master/Android%E7%9B%B8%E5%85%B3/Android/%E5%BC%80%E6%BA%90%E5%BA%93/OkHttp.md)
+  - [Volley](https://github.com/sariel20/Notes/blob/master/Android%E7%9B%B8%E5%85%B3/Android/%E5%BC%80%E6%BA%90%E5%BA%93/Volley.md)
+  - [ButterKnife](https://github.com/sariel20/Notes/blob/master/Android%E7%9B%B8%E5%85%B3/Android/%E5%BC%80%E6%BA%90%E5%BA%93/Butterknife.md)
+  - [Glide](https://github.com/sariel20/Notes/blob/master/Android%E7%9B%B8%E5%85%B3/Android/%E5%BC%80%E6%BA%90%E5%BA%93/Glide.md)
+  - [Piasso](https://github.com/sariel20/Notes/blob/master/Android%E7%9B%B8%E5%85%B3/Android/%E5%BC%80%E6%BA%90%E5%BA%93/Picasso.md)
+
+-[AndroidStudio插件](https://github.com/sariel20/Notes/blob/master/Android%E7%9B%B8%E5%85%B3/AndroidStudio%E6%8F%92%E4%BB%B6)
 
 ------
-- [kotlin](https://github.com/sariel20/KotlinSample)
-
+- [kotlinSample](https://github.com/sariel20/KotlinSample)
+- [kotlin笔记](https://github.com/sariel20/Notes/blob/master/Kotlin.md)
 ------
 - Java
   - [IO](https://github.com/sariel20/StudyNotes/blob/master/Java/IO.md)
@@ -54,13 +61,13 @@
 
 -----
 - [设计模式](https://github.com/sariel20/StudyNotes/tree/master/DesignPatterns)
-  - 单例模式
-  - Build建造者模式
-  - 适配器模式
+  - [单例模式](https://github.com/sariel20/Notes/blob/master/DesignPatterns/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F.md)
+  - [建造者模式](https://github.com/sariel20/Notes/blob/master/DesignPatterns/%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F.md)
+  - [适配器模式](https://github.com/sariel20/Notes/blob/master/DesignPatterns/%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F.md)
   - 装饰模式
-  - 外观模式
+  - [外观模式](https://github.com/sariel20/Notes/blob/master/DesignPatterns/%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F.md)
   - 组合模式
-  - [观察者模式](https://github.com/sariel20/StudyNotes/blob/master/DesignPatterns/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F.md)
+  - [观察者模式](https://github.com/sariel20/Notes/blob/master/DesignPatterns/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F.md)
   - 策略模式
   - 模版方法模式
   - 责任链模式
