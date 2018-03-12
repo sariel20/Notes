@@ -13,7 +13,7 @@
   - [ViewPage](https://github.com/sariel20/Notes/blob/master/Android%E7%9B%B8%E5%85%B3/Android/ViewPager.md)
   - [冷启动及优化](https://github.com/sariel20/Notes/blob/master/Android%E7%9B%B8%E5%85%B3/Android/%E5%BC%82%E5%B8%B8%E4%B8%8E%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/%E5%86%B7%E5%90%AF%E5%8A%A8%E4%BC%98%E5%8C%96.md)
   - [内存管理](https://github.com/sariel20/Notes/blob/master/Android%E7%9B%B8%E5%85%B3/Android/%E5%BC%82%E5%B8%B8%E4%B8%8E%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86.md)
-  - [ANR&OOM(https://github.com/sariel20/Notes/blob/master/Android%E7%9B%B8%E5%85%B3/Android/%E5%BC%82%E5%B8%B8%E4%B8%8E%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/ANR%26OOM.md)
+  - [ANR&OOM](https://github.com/sariel20/Notes/blob/master/Android%E7%9B%B8%E5%85%B3/Android/%E5%BC%82%E5%B8%B8%E4%B8%8E%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/ANR%26OOM.md)
   - git操作
   - Proguard代码混淆
   - 热更新
