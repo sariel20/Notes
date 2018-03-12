@@ -3,23 +3,23 @@
   - [线程通信相关](https://github.com/sariel20/StudyNotes/blob/master/Android%E7%9B%B8%E5%85%B3/Android/%E7%BA%BF%E7%A8%8B%E9%80%9A%E4%BF%A1%E7%9B%B8%E5%85%B3.md)
   - [内存泄露](https://github.com/sariel20/StudyNotes/blob/master/Android%E7%9B%B8%E5%85%B3/Android/%E5%86%85%E5%AD%98%E6%B3%84%E9%9C%B2.md)
   - [Android构建流程](https://github.com/sariel20/StudyNotes/blob/master/Android%E7%9B%B8%E5%85%B3/Android/Android%E6%9E%84%E5%BB%BA%E6%B5%81%E7%A8%8B.md)
-  - [UI卡顿分析](https://github.com/sariel20/StudyNotes/blob/master/Android%E7%9B%B8%E5%85%B3/Android/UI%E5%8D%A1%E9%A1%BF%E5%88%86%E6%9E%90.md)
+  - [UI卡顿分析](https://github.com/sariel20/Notes/blob/master/Android%E7%9B%B8%E5%85%B3/Android/%E5%BC%82%E5%B8%B8%E4%B8%8E%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/UI%E5%8D%A1%E9%A1%BF%E5%88%86%E6%9E%90.md)
   - [View绘制相关](https://github.com/sariel20/StudyNotes/blob/master/Android%E7%9B%B8%E5%85%B3/Android/View%E7%BB%98%E5%88%B6.md)
   - [事件分发机制](https://github.com/sariel20/StudyNotes/blob/master/Android%E7%9B%B8%E5%85%B3/Android/%E4%BA%8B%E4%BB%B6%E5%88%86%E5%8F%91%E6%9C%BA%E5%88%B6.md)
   - [AsyncTask](https://github.com/sariel20/StudyNotes/blob/master/Android%E7%9B%B8%E5%85%B3/Android/AsyncTask.md)
   - [Fragment](https://github.com/sariel20/Notes/blob/master/Android%E7%9B%B8%E5%85%B3/Android/Fragment.md)
-  - [Bitmap](https://github.com/sariel20/StudyNotes/blob/master/Android%E7%9B%B8%E5%85%B3/Android/Bitmap.md)
+  - [Bitmap](https://github.com/sariel20/Notes/blob/master/Android%E7%9B%B8%E5%85%B3/Android/%E5%BC%82%E5%B8%B8%E4%B8%8E%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/Bitmap.md)
   - [Material Design](https://github.com/sariel20/StudyNotes/blob/master/Android%E7%9B%B8%E5%85%B3/Android/MaterialDesign.md)
   - [ViewPage](https://github.com/sariel20/Notes/blob/master/Android%E7%9B%B8%E5%85%B3/Android/ViewPager.md)
-  - 冷启动及优化
-  - 内存管理
-  - ANR&OOM
+  - [冷启动及优化](https://github.com/sariel20/Notes/blob/master/Android%E7%9B%B8%E5%85%B3/Android/%E5%BC%82%E5%B8%B8%E4%B8%8E%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/%E5%86%B7%E5%90%AF%E5%8A%A8%E4%BC%98%E5%8C%96.md)
+  - [内存管理](https://github.com/sariel20/Notes/blob/master/Android%E7%9B%B8%E5%85%B3/Android/%E5%BC%82%E5%B8%B8%E4%B8%8E%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86.md)
+  - [ANR&OOM(https://github.com/sariel20/Notes/blob/master/Android%E7%9B%B8%E5%85%B3/Android/%E5%BC%82%E5%B8%B8%E4%B8%8E%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/ANR%26OOM.md)
   - git操作
   - Proguard代码混淆
   - 热更新
   - 进程保活
 
--[开源库](https://github.com/sariel20/Notes/tree/master/Android%E7%9B%B8%E5%85%B3/Android/%E5%BC%80%E6%BA%90%E5%BA%93)
+- [开源库](https://github.com/sariel20/Notes/tree/master/Android%E7%9B%B8%E5%85%B3/Android/%E5%BC%80%E6%BA%90%E5%BA%93)
   - [Retrofit](https://github.com/sariel20/Notes/blob/master/Android%E7%9B%B8%E5%85%B3/Android/%E5%BC%80%E6%BA%90%E5%BA%93/Retrofit.md)
   - [Okhttp](https://github.com/sariel20/Notes/blob/master/Android%E7%9B%B8%E5%85%B3/Android/%E5%BC%80%E6%BA%90%E5%BA%93/OkHttp.md)
   - [Volley](https://github.com/sariel20/Notes/blob/master/Android%E7%9B%B8%E5%85%B3/Android/%E5%BC%80%E6%BA%90%E5%BA%93/Volley.md)
@@ -27,7 +27,7 @@
   - [Glide](https://github.com/sariel20/Notes/blob/master/Android%E7%9B%B8%E5%85%B3/Android/%E5%BC%80%E6%BA%90%E5%BA%93/Glide.md)
   - [Piasso](https://github.com/sariel20/Notes/blob/master/Android%E7%9B%B8%E5%85%B3/Android/%E5%BC%80%E6%BA%90%E5%BA%93/Picasso.md)
 
--[AndroidStudio插件](https://github.com/sariel20/Notes/blob/master/Android%E7%9B%B8%E5%85%B3/AndroidStudio%E6%8F%92%E4%BB%B6)
+- [AndroidStudio插件](https://github.com/sariel20/Notes/blob/master/Android%E7%9B%B8%E5%85%B3/AndroidStudio%E6%8F%92%E4%BB%B6)
 
 ------
 - [kotlinSample](https://github.com/sariel20/KotlinSample)
