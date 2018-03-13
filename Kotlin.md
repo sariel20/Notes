@@ -1,4 +1,4 @@
-##### 数据类型
+### 数据类型
 1. Boolean
 	
 	val aBoolean:Boolean = true
@@ -76,3 +76,54 @@ kotlin中：
 
 	val arrayOfInt:IntArray = intArrayOf(1,2,3,4)
 	//CharArray,Array<String>, 
+
+
+==============
+
+### 程序结构
+
+##### 变量与常量
+- val 运行时常量
+- const val 编译器常量
+- var 变量
+- kotlin可类型推导，不写数据类型，如`val FINAL_HELLO = "Hello"`
+
+##### 函数
+
+	// 函数名 参数列表           返回值
+	fun main(args:Array<String>):Unit{//函数体}
+
+	//匿名函数返回值可直接赋值给变量
+	var int2Long = fun(arg1:Int,arg2:Int){
+		return arg1 + arg2
+	}
+
+##### Lambda表达式（匿名函数）
+`{[参数列表]->[函数体，最有一行是返回值]}`
+
+	val sum = {arg1:Int,arg2:Int -> arg1 + arg2}
+	val printInHello = {
+		println("Hello")
+	}
+	var args:Array<String>...
+	args.forEach{
+		println(it)//遍历args
+	}
+	//也可以这样写
+	args.forEach(::println)
+	//终止迭代
+	args.forEach ForEach@{
+		if(it == "b") return@ForEach
+	}
+
+- ()->Unit 无参
+- (Int)->Int 传入整型，返回一个整型
+- (String,(String)->String)->Boolean 传入字符串、Lambda表达式，返回Boolean
+
+简化：
+- 函数参数调用时最后一个Lambda可以移出去
+- 函数参数只有一个Lambda，调用时小括号可省略
+- Lambda只有一个参数可默认为it
+- 入参、返回值与形参一致的函数可以用函数引用的方式作为实参传入
+
+##### 类成员  
