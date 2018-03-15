@@ -126,4 +126,62 @@ kotlin中：
 - Lambda只有一个参数可默认为it
 - 入参、返回值与形参一致的函数可以用函数引用的方式作为实参传入
 
-##### 类成员  
+##### 类成员
+`lateinit var c:String` var延迟初始化
+
+```
+val e:X by lazy{
+	//val延迟初始化,调用时才会执行lazy方法块中的代码
+	X()
+}
+```
+
+函数与方法的区别
+- 函数强调功能本身，不考虑从属
+- 方法的称呼通常是从类的角度出发的
+- 叫法不同而已 
+
+属性初始化
+- 属性的初始化尽量在构造方法中完成
+- 无法在构造方法中初始化，尝试降级为局部变量
+- var用lateinit延迟初始化，val用lazy
+- 可空类型谨慎用null直接初始化
+
+##### 运算符
+`operator fun..`运算符方法
+
+
+##### 中缀表达式
+- 只有一个参数，且用infix修饰的函数
+```
+class Book{infix fun on(a:String){}}
+Book() on "MyDesk"
+```
+
+##### 分支表达式
+```
+var code = if(..) 0 else 1
+```
+
+##### when表达式
+```
+when(code){
+	is Int -> 输出
+	in 1..10 -> 输出
+}
+```
+
+##### 变长参数、具名参数、默认参数
+```
+//变长参数相当于array，使用具名参数可写在参数列表任意位置
+fun hello(double:Double = 3.0, vararg ints:Int,str:String){
+	ints.forEach(::println)
+}
+
+val array = intArrayOf(1,5,9)
+
+//*array展开数组，暂不支持list
+//默认参数可不传，产生歧义的话需要指定其他参数为具名参数
+hello(ints = *array,str = "Hello")
+```
+

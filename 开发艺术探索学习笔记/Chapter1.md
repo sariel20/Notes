@@ -1,37 +1,37 @@
-#### Activity的生命周期和启动模式
-##### Activity生命周期分析
-`onCreate` 正在被创建，初始化工作
-`onStart` 正在被启动，处于后台可见状态，用户不可见
-`onResume` 已经可见，可与用户进行交互
-`onPause` 暂停状态，用户很难停止在此回调中，除非新activity是透明主题
-`onStop` 即将停止，可做稍微重量级得回收工作
-`onDestroy` 即将被销毁，可做最终得资源释放和回收工作
-`onRestart` 正在重新启动，一般由不可见变为可见调用此方法
+#### Activity碌脛脡煤脙眉脰脺脝脷潞脥脝么露炉脛拢脢陆
+##### Activity脡煤脙眉脰脺脝脷路脰脦枚
+`onCreate` 脮媒脭脷卤禄麓麓陆篓拢卢鲁玫脢录禄炉鹿陇脳梅
+`onStart` 脮媒脭脷卤禄脝么露炉拢卢麓娄脫脷潞贸脤篓驴脡录没脳麓脤卢拢卢脫脙禄搂虏禄驴脡录没
+`onResume` 脪脩戮颅驴脡录没拢卢驴脡脫毛脫脙禄搂陆酶脨脨陆禄禄楼
+`onPause` 脭脻脥拢脳麓脤卢拢卢脫脙禄搂潞脺脛脩脥拢脰鹿脭脷麓脣禄脴碌梅脰脨拢卢鲁媒路脟脨脗activity脢脟脥赂脙梅脰梅脤芒
+`onStop` 录麓陆芦脥拢脰鹿拢卢驴脡脳枚脡脭脦垄脰脴脕驴录露碌脙禄脴脢脮鹿陇脳梅
+`onDestroy` 录麓陆芦卤禄脧煤禄脵拢卢驴脡脳枚脳卯脰脮碌脙脳脢脭麓脢脥路脜潞脥禄脴脢脮鹿陇脳梅
+`onRestart` 脮媒脭脷脰脴脨脗脝么露炉拢卢脪禄掳茫脫脡虏禄驴脡录没卤盲脦陋驴脡录没碌梅脫脙麓脣路陆路篓
 
-##### Activity启动过程
-由`Instrumentation`来处理，然后通过`Binder`向`AMS`发送请求，`AMS`内部维护者一个`ActivityStack`并负责栈内得`Activity`的状态同步，`AMS`通过`ActivityThread`去同步`Activity`得状态从而完成生命周期方法得回调。
+##### Activity脝么露炉鹿媒鲁脤
+脫脡`Instrumentation`脌麓麓娄脌铆拢卢脠禄潞贸脥篓鹿媒`Binder`脧貌`AMS`路垄脣脥脟毛脟贸拢卢`AMS`脛脷虏驴脦卢禄陇脮脽脪禄赂枚`ActivityStack`虏垄赂潞脭冒脮禄脛脷碌脙`Activity`碌脛脳麓脤卢脥卢虏陆拢卢`AMS`脥篓鹿媒`ActivityThread`脠楼脥卢虏陆`Activity`碌脙脳麓脤卢麓脫露酶脥锚鲁脡脡煤脙眉脰脺脝脷路陆路篓碌脙禄脴碌梅隆拢
 
-旧Activity的`onPause`调用后新的Activity才会启动。
+戮脡Activity碌脛`onPause`碌梅脫脙潞贸脨脗碌脛Activity虏脜禄谩脝么露炉隆拢
 
-##### 异常情况下的生命周期分析
-__情况1:__
-手机横竖屏切换后会销毁并重新创建Activity，这时会在`onStop`之前回调`onSaveInstanceState`，该方法用于保存该活动的临时数据，并在重新创建`onCreate`中返回保存的数据，或者在`onRestoreInstanceState`中返回，二者得区别是`onRestoreInstanceState`一旦被调用就说明参数一定是有值的，我们不用额外的判断是否为空。
-默认情况下系统会在异常情况下自动保存并恢复数据，比如EditText中输入的值，ListView滚动位置等。
-__情况2:__
-内存不足时导致低优先级的Activity被杀死
-前台>可见但并非前台>后台
-内存不足时会按照上面的优先级销毁Activity
-数据存储和恢复方式和情况1相同
+##### 脪矛鲁拢脟茅驴枚脧脗碌脛脡煤脙眉脰脺脝脷路脰脦枚
+__脟茅驴枚1:__
+脢脰禄煤潞谩脢煤脝脕脟脨禄禄潞贸禄谩脧煤禄脵虏垄脰脴脨脗麓麓陆篓Activity拢卢脮芒脢卤禄谩脭脷`onStop`脰庐脟掳禄脴碌梅`onSaveInstanceState`拢卢赂脙路陆路篓脫脙脫脷卤拢麓忙赂脙禄卯露炉碌脛脕脵脢卤脢媒戮脻拢卢虏垄脭脷脰脴脨脗麓麓陆篓`onCreate`脰脨路碌禄脴卤拢麓忙碌脛脢媒戮脻拢卢禄貌脮脽脭脷`onRestoreInstanceState`脰脨路碌禄脴拢卢露镁脮脽碌脙脟酶卤冒脢脟`onRestoreInstanceState`脪禄碌漏卤禄碌梅脫脙戮脥脣碌脙梅虏脦脢媒脪禄露篓脢脟脫脨脰碌碌脛拢卢脦脪脙脟虏禄脫脙露卯脥芒碌脛脜脨露脧脢脟路帽脦陋驴脮隆拢
+脛卢脠脧脟茅驴枚脧脗脧碌脥鲁禄谩脭脷脪矛鲁拢脟茅驴枚脧脗脳脭露炉卤拢麓忙虏垄禄脰赂麓脢媒戮脻拢卢卤脠脠莽EditText脰脨脢盲脠毛碌脛脰碌拢卢ListView鹿枚露炉脦禄脰脙碌脠隆拢
+__脟茅驴枚2:__
+脛脷麓忙虏禄脳茫脢卤碌录脰脗碌脥脫脜脧脠录露碌脛Activity卤禄脡卤脣脌
+脟掳脤篓>驴脡录没碌芦虏垄路脟脟掳脤篓>潞贸脤篓
+脛脷麓忙虏禄脳茫脢卤禄谩掳麓脮脮脡脧脙忙碌脛脫脜脧脠录露脧煤禄脵Activity
+脢媒戮脻麓忙麓垄潞脥禄脰赂麓路陆脢陆潞脥脟茅驴枚1脧脿脥卢
 
-如果不想在系统配置发生改变时重建Activity，可以给Activity指定`configChanges`属性。
+脠莽鹿没虏禄脧毛脭脷脧碌脥鲁脜盲脰脙路垄脡煤赂脛卤盲脢卤脰脴陆篓Activity拢卢驴脡脪脭赂酶Activity脰赂露篓`configChanges`脢么脨脭隆拢
 
-##### 启动模式
-1. standard 标准模式，每次启动activity都会重新创建新的实例，不管是否存在与栈内
-2. singleTop 栈顶复用模式，如果新的activity已经位于栈顶，那么就不会被重新创建，同时`onNewIntent`方法会被回调，通过此方法的参数我们可以获取到当前请求得信息
-3. singleTask 栈内复用模式，如果新的activity在栈内存在，则不会重新创建，并销毁此activity上面得所有活动，调到栈顶。
-4. singleInstance 单实例模式，加强版singleTask，指定此模式的活动会单独位于一个任务栈内。
+##### 脝么露炉脛拢脢陆
+1. standard 卤锚脳录脛拢脢陆拢卢脙驴麓脦脝么露炉activity露录禄谩脰脴脨脗麓麓陆篓脨脗碌脛脢碌脌媒拢卢虏禄鹿脺脢脟路帽麓忙脭脷脫毛脮禄脛脷
+2. singleTop 脮禄露楼赂麓脫脙脛拢脢陆拢卢脠莽鹿没脨脗碌脛activity脪脩戮颅脦禄脫脷脮禄露楼拢卢脛脟脙麓戮脥虏禄禄谩卤禄脰脴脨脗麓麓陆篓拢卢脥卢脢卤`onNewIntent`路陆路篓禄谩卤禄禄脴碌梅拢卢脥篓鹿媒麓脣路陆路篓碌脛虏脦脢媒脦脪脙脟驴脡脪脭禄帽脠隆碌陆碌卤脟掳脟毛脟贸碌脙脨脜脧垄
+3. singleTask 脮禄脛脷赂麓脫脙脛拢脢陆拢卢脠莽鹿没脨脗碌脛activity脭脷脮禄脛脷麓忙脭脷拢卢脭貌虏禄禄谩脰脴脨脗麓麓陆篓拢卢虏垄脧煤禄脵麓脣activity脡脧脙忙碌脙脣霉脫脨禄卯露炉拢卢碌梅碌陆脮禄露楼隆拢
+4. singleInstance 碌楼脢碌脌媒脛拢脢陆拢卢录脫脟驴掳忙singleTask拢卢脰赂露篓麓脣脛拢脢陆碌脛禄卯露炉禄谩碌楼露脌脦禄脫脷脪禄赂枚脠脦脦帽脮禄脛脷隆拢
 
-##### IntentFilter匹配规则
-隐式调用需要Intent能够匹配目标组件得IntentFilter中所设置的过滤信息，如果不匹配将无法启动目标activity。
-过滤信息有action,category,data
+##### IntentFilter脝楼脜盲鹿忙脭貌
+脪镁脢陆碌梅脫脙脨猫脪陋Intent脛脺鹿禄脝楼脜盲脛驴卤锚脳茅录镁碌脙IntentFilter脰脨脣霉脡猫脰脙碌脛鹿媒脗脣脨脜脧垄拢卢脠莽鹿没虏禄脝楼脜盲陆芦脦脼路篓脝么露炉脛驴卤锚activity隆拢
+鹿媒脗脣脨脜脧垄脫脨action,category,data
 
