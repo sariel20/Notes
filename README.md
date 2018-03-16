@@ -48,7 +48,7 @@
   - [第三章](https://github.com/sariel20/StudyNotes/blob/master/%E5%BC%80%E5%8F%91%E8%89%BA%E6%9C%AF%E6%8E%A2%E7%B4%A2%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Chapter3.md)
   - [第四章](https://github.com/sariel20/StudyNotes/blob/master/%E5%BC%80%E5%8F%91%E8%89%BA%E6%9C%AF%E6%8E%A2%E7%B4%A2%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Chapter4.md)
   - 第五章
-  - 第六章
+  - [第六章](https://github.com/sariel20/Notes/blob/master/%E5%BC%80%E5%8F%91%E8%89%BA%E6%9C%AF%E6%8E%A2%E7%B4%A2%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Chapter6.md)
   - 第七章
   - 第八章
   - 第九章
@@ -64,6 +64,7 @@
   - [单例模式](https://github.com/sariel20/Notes/blob/master/DesignPatterns/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F.md)
   - [建造者模式](https://github.com/sariel20/Notes/blob/master/DesignPatterns/%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F.md)
   - [适配器模式](https://github.com/sariel20/Notes/blob/master/DesignPatterns/%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F.md)
+  - [工厂模式](https://github.com/sariel20/Notes/blob/master/DesignPatterns/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F.md)
   - 装饰模式
   - [外观模式](https://github.com/sariel20/Notes/blob/master/DesignPatterns/%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F.md)
   - 组合模式
