@@ -8,7 +8,7 @@ _layout_ 负责确定View在父容器得位置
 _draw_ 负责将View绘制在屏幕上
 ##### DecorView
 View层得事件都先经过DecorView，然后才传递给我们得View
-
+	
 ##### 理解MeasureSpec
 很大程度的决定了View的尺寸规格
 在测量过程中，系统会将View的LayoutParams根据父容器所施加得规则转换成对应的MeasureSpec，然后根据这个measureSpec来测量出View得宽高
