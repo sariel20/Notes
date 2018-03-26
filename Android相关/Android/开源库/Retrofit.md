@@ -69,3 +69,24 @@
 - 回调执行器CallBackExecutor，线程切换
 
 [源码分析图](https://upload-images.jianshu.io/upload_images/944365-56df9f9ed647f7da.png?imageMogr2/auto-orient/)
+
+retrofit.create(Class)内部返回一个动态代理对象  
+动态代理指的是：当你要调用某个类的方法前，插入你想要执行的代码。动态代理主要是利用了java反射机制
+`Call<Reception> call = request.getCall();`
+代码中request其实就是一个动态代理对象，并不是一个接口，当调用getCall时，执行的就是动态代理的方法 
+调用后retrofit把接口翻译成一个http请求，也就是MethodHandler对象，这个对象中包含了：
+- OkHttpClient发送网络请求的工具
+- RequestFactory包含http请求的url,header等信息
+- CallAdapter请求返回的数据类型
+- Converter 数据转换器
+当调用call.enqueue方法时就发送了这个请求，然后就可以处理Response数据了
+
+接口
+- CallBack
+这个接口就是请求数据返回的接口
+- Converter
+这个接口的作用是将http返回的数据解析成java对象
+- Call
+这个接口的作用是发送一个http请求，默认是okHttpCall，子类可基于HttpClient或者HttpUrlConnetction的请求工具
+- CallAdapter 
+主要作用就是将Call对象转换成另一个对象，支持RxJava
